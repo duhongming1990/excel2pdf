@@ -1,4 +1,4 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
 import com.itextpdf.text.Document;
 

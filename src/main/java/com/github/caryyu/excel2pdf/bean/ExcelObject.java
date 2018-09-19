@@ -1,7 +1,8 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
 import java.io.InputStream;
 
+import com.github.caryyu.excel2pdf.bean.Excel;
 import org.apache.poi.ss.usermodel.*;
 
 import com.itextpdf.text.*;

@@ -1,4 +1,4 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;

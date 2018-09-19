@@ -1,4 +1,4 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
 import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
 import org.apache.poi.hssf.usermodel.HSSFPicture;

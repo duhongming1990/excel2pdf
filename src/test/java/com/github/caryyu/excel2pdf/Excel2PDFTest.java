@@ -1,5 +1,7 @@
 package com.github.caryyu.excel2pdf;
 
+import com.github.caryyu.excel2pdf.bean.Excel2Pdf;
+import com.github.caryyu.excel2pdf.bean.ExcelObject;
 import com.itextpdf.text.DocumentException;
 
 import java.io.*;

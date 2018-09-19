@@ -1,15 +1,17 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
+import com.github.caryyu.excel2pdf.util.POIUtil;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 
-import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.format.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -150,7 +152,7 @@ public class PdfTableExcel {
 	}
 
 	protected Phrase getPhrase(Cell cell) {
-		HSSFCellStyle cellStyle = (HSSFCellStyle) cell.getCellStyle();
+		XSSFCellStyle cellStyle = (XSSFCellStyle) cell.getCellStyle();
 		String formatStr = cellStyle.getDataFormatString();
 		// String cellValue = cell.getStringCellValue();
 		double cellNumberValue = 0;
@@ -273,7 +275,7 @@ public class PdfTableExcel {
 		short index = style.getFontIndex();
 		org.apache.poi.ss.usermodel.Font font = wb.getFontAt(index);
 		// 轉換 POI Font 到 iText Font
-		Font itextFont = Resource.getFont((HSSFFont) font);
+		Font itextFont = Resource.getFont((XSSFFont) font);
 		Font result = itextFont;
 		// 粗體+斜體
 		if (font.getBoldweight() == org.apache.poi.ss.usermodel.Font.BOLDWEIGHT_BOLD
@@ -284,7 +286,7 @@ public class PdfTableExcel {
 		}else if (font.getItalic()) { // 斜體
 			result.setStyle(Font.ITALIC);
 		}
-		
+
 		// 字体颜色
 		int colorIndex = font.getColor();
 		HSSFColor color = HSSFColor.getIndexHash().get(colorIndex);
@@ -292,7 +294,7 @@ public class PdfTableExcel {
 			int rbg = POIUtil.getRGB(color);
 			result.setColor(new BaseColor(rbg));
 		}
-		
+
 		// 下划线
 		FontUnderline underline = FontUnderline.valueOf(font.getUnderline());
 		if (underline == FontUnderline.SINGLE) {

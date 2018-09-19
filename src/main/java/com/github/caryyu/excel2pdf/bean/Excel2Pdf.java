@@ -1,4 +1,4 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
@@ -89,7 +89,8 @@ public class Excel2Pdf extends PdfTool {
 		if (this.objects.size() <= 1) {
 			// 使用 Excel 版面設定中的紙張大小作為 PDF 輸出紙張大小
 			pageSize = this.objects.get(0).getPageSize();
-			getDocument().setPageSize(pageSize);
+//			getDocument().setPageSize(pageSize);
+			getDocument().setPageSize(PageSize.A1.rotate());
 		} else if (this.objects.size() > 1) { // 多張
 			// 若沒有設定 PDF 輸出紙張大小,預設為 A4 直式
 			if (pageSize == null)

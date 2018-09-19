@@ -1,9 +1,8 @@
-package com.github.caryyu.excel2pdf;
+package com.github.caryyu.excel2pdf.bean;
 
-import org.apache.poi.hssf.usermodel.*;
-
-import com.itextpdf.text.*;
+import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.pdf.BaseFont;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 
 /**
  * Created by cary on 6/15/17.
@@ -28,7 +27,7 @@ public class Resource {
      * @param font
      * @return
      */
-    public static com.itextpdf.text.Font getFont(HSSFFont font) {
+    public static com.itextpdf.text.Font getFont(XSSFFont font) {
     	try {
     		com.itextpdf.text.Font iTextFont =FontFactory.getFont(font.getFontName(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED,font.getFontHeightInPoints());
     		return iTextFont;
