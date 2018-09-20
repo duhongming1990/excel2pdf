@@ -141,11 +141,10 @@ public class Excel2Pdf extends PdfTool {
 	 * @throws DocumentException
 	 */
 	protected void toCreateContentIndexes(PdfWriter writer, Document document, List<ExcelObject> objects)
-			throws DocumentException {
+			throws DocumentException, IOException {
 		PdfPTable table = new PdfPTable(1);
 		table.setKeepTogether(true);
 		table.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
-		//
 		Font font = new Font(Resource.BASE_FONT_CHINESE, 12, Font.NORMAL);
 		font.setColor(new BaseColor(0, 0, 255));
 		//

@@ -28,6 +28,6 @@ public class PDFTest {
         Excel2Pdf pdf = new Excel2Pdf(objects, fos);
         pdf.convert();
 
-        WaterPrintUtil.waterMark(new ConvertUtil().parse(fos),fileOutputStream, "00203219\n0601\n158143024\n20180917102134");
+        WaterPrintUtil.waterMark(new ConvertUtil().parse(fos),fileOutputStream, "00203219\n0601\n158143024杜\n20180917102134");
     }
 }
